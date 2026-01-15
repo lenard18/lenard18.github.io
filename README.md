@@ -806,7 +806,7 @@ ${Array.from(document.querySelectorAll('#tablaItems tr')).map(tr => {
 _PVC PRO - Cielos Rasos y Acabados_`;
 
     const numeroLimpio = clienteTelefono.replace(/\D/g, '');
-    const url = `https://wa.me/57${numeroLimpio}?text=${encodeURIComponent(mensaje)}`;
+    const url = `https://wa.me/${numeroLimpio}?text=${encodeURIComponent(mensaje)}`;
     
     window.open(url, '_blank');
   }
