@@ -164,40 +164,6 @@
     text-align: center;
   }
 
-  .texture-preview {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .texture-item {
-    background: #0a0a1a;
-    border: 2px solid #00bcd4;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  .texture-item:hover {
-    border-color: #00ffcc;
-    transform: scale(1.05);
-  }
-
-  .texture-item.selected {
-    border-color: #00ffcc;
-    background: rgba(0, 255, 204, 0.1);
-  }
-
-  .texture-item div {
-    width: 100%;
-    height: 55px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-  }
-
   /* Estilos de Factura/Cotización */
   .factura {
     background: white;
@@ -313,6 +279,16 @@
     width: 100%;
     border-collapse: collapse;
     margin: 25px 0;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .tabla-factura thead,
+  .tabla-factura tbody,
+  .tabla-factura tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
   }
 
   .tabla-factura th {
@@ -420,15 +396,218 @@
     line-height: 1.7;
   }
 
+  /* RESPONSIVE DESIGN - TABLET */
   @media (max-width: 1100px) {
     .container {
       grid-template-columns: 1fr;
     }
+    
     .cuadro-metraje-content {
       flex-direction: column;
     }
+    
     .cuadro-metraje-right {
       width: 100%;
+    }
+    
+    h1 {
+      font-size: 1.4em;
+    }
+    
+    .factura-logo {
+      font-size: 1.8em;
+    }
+  }
+
+  /* RESPONSIVE DESIGN - MÓVIL */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+
+    .panel {
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    h1 {
+      font-size: 1.3em;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.1em;
+    }
+
+    .tabs {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tab {
+      padding: 10px;
+      font-size: 0.85em;
+    }
+
+    .dimension-row {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    button {
+      padding: 12px;
+      font-size: 0.95em;
+    }
+
+    .resultado {
+      padding: 12px;
+      font-size: 0.85em;
+    }
+
+    .resultado p {
+      padding: 5px;
+      font-size: 0.9em;
+    }
+
+    /* Factura responsive */
+    .factura {
+      padding: 20px;
+    }
+
+    .factura-header {
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .factura-logo {
+      font-size: 1.5em;
+    }
+
+    .factura-info {
+      text-align: left;
+    }
+
+    .factura-info h3 {
+      font-size: 1.2em;
+    }
+
+    .cuadro-metraje {
+      padding: 20px;
+    }
+
+    .cuadro-metraje-titulo {
+      font-size: 0.95em;
+    }
+
+    .cuadro-metraje-dimensiones {
+      font-size: 1.1em;
+    }
+
+    .cuadro-metraje-numero {
+      font-size: 2.2em;
+    }
+
+    .cliente-info {
+      padding: 15px;
+    }
+
+    .cliente-info h3 {
+      font-size: 1.1em;
+    }
+
+    /* Tabla responsive */
+    .tabla-factura {
+      font-size: 0.85em;
+    }
+
+    .tabla-factura th,
+    .tabla-factura td {
+      padding: 8px 5px;
+    }
+
+    .tabla-factura input {
+      width: 60px;
+      padding: 4px;
+      font-size: 0.85em;
+    }
+
+    .totales {
+      font-size: 1em;
+    }
+
+    .totales .total-final {
+      font-size: 1.2em;
+      padding: 12px;
+    }
+
+    .btn-group {
+      grid-template-columns: 1fr;
+    }
+
+    .btn-imprimir,
+    .btn-whatsapp {
+      padding: 12px;
+      font-size: 0.9em;
+    }
+
+    .notas-factura {
+      padding: 15px;
+      font-size: 0.85em;
+    }
+  }
+
+  /* RESPONSIVE DESIGN - MÓVIL PEQUEÑO */
+  @media (max-width: 480px) {
+    body {
+      padding: 8px;
+    }
+
+    .panel {
+      padding: 15px;
+    }
+
+    h1 {
+      font-size: 1.2em;
+    }
+
+    .tab {
+      font-size: 0.8em;
+      padding: 8px;
+    }
+
+    input, select {
+      padding: 8px;
+      font-size: 0.9em;
+    }
+
+    .factura {
+      padding: 15px;
+    }
+
+    .factura-logo {
+      font-size: 1.3em;
+    }
+
+    .cuadro-metraje {
+      padding: 15px;
+    }
+
+    .cuadro-metraje-numero {
+      font-size: 1.8em;
+    }
+
+    .tabla-factura {
+      font-size: 0.75em;
+    }
+
+    .tabla-factura th,
+    .tabla-factura td {
+      padding: 6px 3px;
+    }
+
+    .tabla-factura input {
+      width: 50px;
+      font-size: 0.8em;
     }
   }
 
@@ -483,7 +662,6 @@
         <input type="number" id="txtMetros" placeholder="Área en m²" step="0.1">
       </div>
 
-     
       <button onclick="calcularMateriales()">🧮 Calcular Materiales</button>
 
       <div class="resultado" id="resultado"></div>
@@ -576,9 +754,8 @@
 
 <script>
   let areaTotal = 0;
-  let modeloActual = '';
+  let modeloActual = 'estándar';
 
-  // Precios por defecto (editables en la tabla)
   const preciosDefault = {
     laminas: 28000,
     omegas: 4000,
@@ -591,7 +768,6 @@
 
   let materialesCalculados = {};
 
-  // Función para redondear tornillos
   function redondearTornillos(cantidad) {
     const resto = cantidad % 100;
     
@@ -635,8 +811,6 @@
     `;
   }
 
-  
-
   function calcularMateriales() {
     let m2;
     
@@ -654,13 +828,9 @@
       }
     }
 
-
-
-    // Cálculo base de tornillos
     const tornillosBase = Math.ceil((m2 * 17) / 2);
     const tornillosRedondeados = redondearTornillos(tornillosBase);
 
-    // Cálculos según las fórmulas
     materialesCalculados = {
       laminas: Math.ceil(m2 / 1.785),
       omegas: Math.ceil(m2 / 0.95),
@@ -696,14 +866,12 @@
     const fecha = new Date();
     document.getElementById('fechaFactura').textContent = fecha.toLocaleDateString('es-CO');
 
-    // Mostrar cuadro de medidas
     const cuadroMedidas = document.getElementById('cuadroMedidas');
     const infoMedidas = document.getElementById('infoMedidas');
     const metrajeNumero = document.getElementById('metrajeNumero');
     
     cuadroMedidas.style.display = 'block';
     
-    // Verificar si se usó el tab de dimensiones
     if (document.getElementById('tab-dimensiones').classList.contains('active') && areaTotal > 0) {
       const ancho = parseFloat(document.getElementById('txtAncho').value);
       const largo = parseFloat(document.getElementById('txtLargo').value);
@@ -734,88 +902,4 @@
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td class="item-desc">${item.nombre}</td>
-        <td style="text-align: center;"><input type="number" value="${item.cant}" onchange="recalcularFactura()" data-key="${item.key}" class="cant-input"></td>
-        <td style="text-align: right;"><input type="number" value="${item.precio}" onchange="recalcularFactura()" data-key="${item.key}" class="precio-input"></td>
-        <td class="subtotal">$${(item.cant * item.precio).toLocaleString('es-CO')}</td>
-      `;
-      tbody.appendChild(tr);
-    });
-
-    recalcularFactura();
-  }
-
-  function recalcularFactura() {
-    let total = 0;
-    const rows = document.querySelectorAll('#tablaItems tr');
-    
-    rows.forEach(row => {
-      const cantInput = row.querySelector('.cant-input');
-      const precioInput = row.querySelector('.precio-input');
-      const subtotalTd = row.querySelector('.subtotal');
-      
-      if (cantInput && precioInput) {
-        const cant = parseFloat(cantInput.value) || 0;
-        const precio = parseFloat(precioInput.value) || 0;
-        const itemSubtotal = cant * precio;
-        
-        subtotalTd.textContent = '$' + itemSubtotal.toLocaleString('es-CO');
-        total += itemSubtotal;
-      }
-    });
-
-    document.getElementById('totalFactura').textContent = '$' + total.toLocaleString('es-CO');
-  }
-
-  function imprimirFactura() {
-    window.print();
-  }
-
-  function enviarWhatsApp() {
-    const clienteNombre = document.getElementById('clienteNombre').value;
-    const clienteTelefono = document.getElementById('clienteTelefono').value;
-    const total = document.getElementById('totalFactura').textContent;
-    const numFactura = document.getElementById('numFactura').value;
-    const metraje = document.getElementById('metrajeNumero').textContent;
-
-    if (!clienteNombre || !clienteTelefono) {
-      alert('⚠️ Por favor complete el nombre y teléfono del cliente');
-      return;
-    }
-
-    const mensaje = `🔧 *COTIZACIÓN PVC PRO #${numFactura}*
-
-📋 Cliente: ${clienteNombre}
-📅 Fecha: ${document.getElementById('fechaFactura').textContent}
-
-*Materiales:*
-${Array.from(document.querySelectorAll('#tablaItems tr')).map(tr => {
-  const desc = tr.querySelector('.item-desc');
-  const cant = tr.querySelector('.cant-input');
-  const precio = tr.querySelector('.precio-input');
-  if (desc && cant && precio) {
-    return `• ${desc.textContent}: ${cant.value} und x $${parseFloat(precio.value).toLocaleString('es-CO')}`;
-  }
-  return '';
-}).filter(Boolean).join('\n')}
-
-💰 *TOTAL: ${total}*
-
-✅ Validez: 15 días
-🏗️ Instalación profesional disponible
-
-_PVC PRO - Cielos Rasos y Acabados_`;
-
-    const numeroLimpio = clienteTelefono.replace(/\D/g, '');
-    const url = `https://wa.me/${numeroLimpio}?text=${encodeURIComponent(mensaje)}`;
-    
-    window.open(url, '_blank');
-  }
-
-  // Establecer fecha al cargar
-  window.addEventListener('load', () => {
-    const fecha = new Date();
-    document.getElementById('fechaFa ctura').textContent = fecha.toLocaleDateString('es-CO');
-  });
-</script>
-</body>
-</html>
+        <td style="text-align: center;"><input type="number" value="${item.cant}" onchange="recalc
