@@ -298,6 +298,39 @@
       background: var(--bg2); color: var(--muted2);
       border: 1.5px dashed var(--border); cursor: default;
     }
+    .proj-link--demo {
+      background: #f0fdf4; color: #16a34a;
+      border: 1.5px solid #bbf7d0;
+    }
+    .proj-link--demo:hover { background: #dcfce7; border-color: #16a34a; transform: translateY(-1px); }
+    .proj-card--wip {
+      border: 1.5px dashed #d1d5db;
+      opacity: 0.92;
+      position: relative;
+    }
+    .proj-card--wip:hover { border-color: #f59e0b; border-style: solid; opacity: 1; }
+    .wip-badge {
+      display: inline-flex; align-items: center; gap: 0.3rem;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; background: #fffbeb; color: #b45309;
+      border: 1px solid #fde68a; border-radius: 6px;
+      padding: 0.18rem 0.55rem; margin-bottom: 0.5rem;
+    }
+    .wip-section-label {
+      width: 100%; grid-column: 1 / -1;
+      display: flex; align-items: center; gap: 1rem;
+      margin: 1.5rem 0 0.25rem;
+    }
+    .wip-section-label span {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #92400e;
+      white-space: nowrap;
+    }
+    .wip-section-label hr {
+      flex: 1; border: none; border-top: 1.5px dashed #fde68a;
+    }
+    .pill-cyan  { background: #ecfeff; color: #0e7490; }
+    .pill-amber { background: #fffbeb; color: #b45309; }
     .proj-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .stack-pill {
       font-size: 0.68rem; font-weight: 600;
@@ -621,26 +654,25 @@
       </div>
 
 
-      <!-- API REST Pro -->
-      <div class="proj-card reveal">
-        <div class="proj-preview" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); display:flex; align-items:center; justify-content:center; min-height:180px;">
-          <div style="text-align:center; color:white; padding:1rem;">
-            <div style="font-size:3.5rem; margin-bottom:0.5rem;">⚙️</div>
-            <div style="font-family:monospace; font-size:13px; color:#818cf8; font-weight:700;">Spring Boot 3 · JWT · Swagger</div>
+      <!-- ── EN DESARROLLO ──────────────────────────────────── -->
+      <div class="wip-section-label">
+        <span>&#x1F528; Explorando &middot; En desarrollo</span>
+        <hr>
+      </div>
+
+      <!-- API REST Pro WIP -->
+      <div class="proj-card proj-card--wip reveal">
+        <div class="proj-preview" style="background:linear-gradient(135deg,#1e293b,#0f172a);display:flex;align-items:center;justify-content:center;min-height:180px;">
+          <div style="text-align:center;color:white;padding:1rem;">
+            <div style="font-size:3.5rem;margin-bottom:0.5rem;">&#x2699;&#xFE0F;</div>
+            <div style="font-family:monospace;font-size:13px;color:#818cf8;font-weight:700;">Spring Boot 3 &middot; JWT &middot; Swagger</div>
           </div>
         </div>
         <div class="proj-body">
-          <div class="proj-meta">
-            <span class="proj-tag">Backend</span>
-            <span class="proj-tag">API REST</span>
-          </div>
+          <span class="wip-badge">&#x1F528; Trabajando en esto</span>
+          <div class="proj-meta"><span class="proj-tag">Backend</span><span class="proj-tag">API REST</span></div>
           <h3 class="proj-title">API REST Profesional con Docker</h3>
-          <p class="proj-desc">API RESTful completa con Spring Boot 3, autenticación JWT, Spring Security 6, documentación Swagger/OpenAPI 3 y contenedor Docker. Incluye CRUD de productos, roles ADMIN/USER y base de datos H2 en memoria con seed data.</p>
-          <div class="proj-highlights">
-            <span class="highlight">✦ JWT + Spring Security 6</span>
-            <span class="highlight">✦ Swagger UI interactivo</span>
-            <span class="highlight">✦ Docker multi-stage build</span>
-          </div>
+          <p class="proj-desc">API RESTful con Spring Boot 3, JWT, roles ADMIN/USER, Swagger UI y Docker. Actualmente mejorando cobertura de tests y configuraci&oacute;n para producci&oacute;n.</p>
           <div class="proj-stack" style="margin-top:1rem;">
             <span class="stack-pill pill-orange">Java 21</span>
             <span class="stack-pill pill-teal">Spring Boot 3</span>
@@ -649,32 +681,25 @@
             <span class="stack-pill pill-gray">H2 / JPA</span>
           </div>
           <div class="proj-links">
-            <a href="https://api-rest-pro.onrender.com/swagger-ui.html" target="_blank" class="proj-link proj-link--demo">▶ Demo</a>
-            <a href="https://github.com/lenard18/api-rest-pro" target="_blank" class="proj-link proj-link--code">⌥ Código</a>
+            <a href="https://api-rest-pro.onrender.com/swagger-ui.html" target="_blank" class="proj-link proj-link--demo">&#x25B6; Ver avance</a>
+            <a href="https://github.com/lenard18/api-rest-pro" target="_blank" class="proj-link proj-link--code">&#x2325; C&oacute;digo</a>
           </div>
         </div>
       </div>
 
-      <!-- Dashboard de Gestión -->
-      <div class="proj-card reveal">
-        <div class="proj-preview" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); display:flex; align-items:center; justify-content:center; min-height:180px;">
-          <div style="text-align:center; color:white; padding:1rem;">
-            <div style="font-size:3.5rem; margin-bottom:0.5rem;">📊</div>
-            <div style="font-family:monospace; font-size:13px; color:#22c55e; font-weight:700;">Vue 3 · Chart.js · KPIs</div>
+      <!-- Dashboard WIP -->
+      <div class="proj-card proj-card--wip reveal">
+        <div class="proj-preview" style="background:linear-gradient(135deg,#0f172a,#1e293b);display:flex;align-items:center;justify-content:center;min-height:180px;">
+          <div style="text-align:center;color:white;padding:1rem;">
+            <div style="font-size:3.5rem;margin-bottom:0.5rem;">&#x1F4CA;</div>
+            <div style="font-family:monospace;font-size:13px;color:#22c55e;font-weight:700;">Vue 3 &middot; Chart.js &middot; KPIs</div>
           </div>
         </div>
         <div class="proj-body">
-          <div class="proj-meta">
-            <span class="proj-tag">Frontend</span>
-            <span class="proj-tag">Data Viz</span>
-          </div>
-          <h3 class="proj-title">Dashboard de Gestión con Gráficas</h3>
-          <p class="proj-desc">Panel de análisis empresarial con Vue 3 y Chart.js. Incluye 6 KPIs en tiempo real, gráficas de barras, dona y líneas comparativas, tabla de pedidos filtrable con búsqueda y exportación a CSV.</p>
-          <div class="proj-highlights">
-            <span class="highlight">✦ 3 tipos de gráficas Chart.js</span>
-            <span class="highlight">✦ Tabla filtrable + exportar CSV</span>
-            <span class="highlight">✦ Comparativa anual de ventas</span>
-          </div>
+          <span class="wip-badge">&#x1F528; Trabajando en esto</span>
+          <div class="proj-meta"><span class="proj-tag">Frontend</span><span class="proj-tag">Data Viz</span></div>
+          <h3 class="proj-title">Dashboard de Gesti&oacute;n con Gr&aacute;ficas</h3>
+          <p class="proj-desc">Panel de an&aacute;lisis con Vue 3 y Chart.js. KPIs en tiempo real, gr&aacute;ficas de barras, dona y l&iacute;neas. Puliendo dise&ntilde;o responsive y agregando m&aacute;s m&eacute;tricas.</p>
           <div class="proj-stack" style="margin-top:1rem;">
             <span class="stack-pill pill-green">Vue 3</span>
             <span class="stack-pill pill-teal">Chart.js</span>
@@ -682,31 +707,25 @@
             <span class="stack-pill pill-gray">Composition API</span>
           </div>
           <div class="proj-links">
-            <a href="https://github.com/lenard18/dashboard-gestion" target="_blank" class="proj-link proj-link--code">⌥ Código</a>
+            <a href="https://lenard18.github.io/dashboard-gestion/" target="_blank" class="proj-link proj-link--demo">&#x25B6; Ver avance</a>
+            <a href="https://github.com/lenard18/dashboard-gestion" target="_blank" class="proj-link proj-link--code">&#x2325; C&oacute;digo</a>
           </div>
         </div>
       </div>
 
-      <!-- E-commerce MercadoPago -->
-      <div class="proj-card reveal">
-        <div class="proj-preview" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); display:flex; align-items:center; justify-content:center; min-height:180px;">
-          <div style="text-align:center; padding:1rem;">
-            <div style="font-size:3.5rem; margin-bottom:0.5rem;">🛒</div>
-            <div style="font-family:monospace; font-size:13px; color:#009ee3; font-weight:700;">Vue 3 · Vue Router · MercadoPago</div>
+      <!-- E-commerce WIP -->
+      <div class="proj-card proj-card--wip reveal">
+        <div class="proj-preview" style="background:linear-gradient(135deg,#eff6ff,#dbeafe);display:flex;align-items:center;justify-content:center;min-height:180px;">
+          <div style="text-align:center;padding:1rem;">
+            <div style="font-size:3.5rem;margin-bottom:0.5rem;">&#x1F6D2;</div>
+            <div style="font-family:monospace;font-size:13px;color:#009ee3;font-weight:700;">Vue 3 &middot; Vue Router &middot; MercadoPago</div>
           </div>
         </div>
         <div class="proj-body">
-          <div class="proj-meta">
-            <span class="proj-tag">Full Stack</span>
-            <span class="proj-tag">E-commerce</span>
-          </div>
+          <span class="wip-badge">&#x1F528; Trabajando en esto</span>
+          <div class="proj-meta"><span class="proj-tag">Full Stack</span><span class="proj-tag">E-commerce</span></div>
           <h3 class="proj-title">E-commerce con MercadoPago</h3>
-          <p class="proj-desc">Tienda virtual TechStore con Vue Router 4, carrito de compras reactivo, sistema de cupones de descuento y flujo de pago completo con MercadoPago Sandbox. Checkout con validación de formularios y navegación SPA.</p>
-          <div class="proj-highlights">
-            <span class="highlight">✦ Carrito reactivo sin Pinia</span>
-            <span class="highlight">✦ Cupones de descuento</span>
-            <span class="highlight">✦ MercadoPago Sandbox</span>
-          </div>
+          <p class="proj-desc">Tienda TechStore con Vue Router 4, carrito reactivo y cupones. Integrando flujo de pago con MercadoPago. En proceso de conectar con backend.</p>
           <div class="proj-stack" style="margin-top:1rem;">
             <span class="stack-pill pill-green">Vue 3</span>
             <span class="stack-pill pill-teal">Vue Router 4</span>
@@ -714,7 +733,34 @@
             <span class="stack-pill pill-gray">Vite 6</span>
           </div>
           <div class="proj-links">
-            <a href="https://github.com/lenard18/ecommerce-mp" target="_blank" class="proj-link proj-link--code">⌥ Código</a>
+            <a href="https://lenard18.github.io/ecommerce-mp/" target="_blank" class="proj-link proj-link--demo">&#x25B6; Ver avance</a>
+            <a href="https://github.com/lenard18/ecommerce-mp" target="_blank" class="proj-link proj-link--code">&#x2325; C&oacute;digo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task Queue Worker WIP -->
+      <div class="proj-card proj-card--wip reveal">
+        <div class="proj-preview" style="background:linear-gradient(135deg,#00ADD8,#003B57);display:flex;align-items:center;justify-content:center;min-height:180px;">
+          <div style="text-align:center;color:white;padding:1rem;">
+            <div style="font-size:3.5rem;margin-bottom:0.5rem;">&#x1F504;</div>
+            <div style="font-family:monospace;font-size:13px;color:#7dd3fc;font-weight:700;">Go &middot; PostgreSQL &middot; Goroutines</div>
+          </div>
+        </div>
+        <div class="proj-body">
+          <span class="wip-badge">&#x1F528; Trabajando en esto</span>
+          <div class="proj-meta"><span class="proj-tag">Backend</span><span class="proj-tag">Workers</span></div>
+          <h3 class="proj-title">Cola de Tareas &mdash; Go + PostgreSQL</h3>
+          <p class="proj-desc">Sistema de procesamiento as&iacute;ncrono con workers concurrentes en Go. PostgreSQL como cola duradera con SELECT FOR UPDATE SKIP LOCKED, reintentos con backoff exponencial y notificaciones por email.</p>
+          <div class="proj-stack" style="margin-top:1rem;">
+            <span class="stack-pill pill-cyan">Go 1.22</span>
+            <span class="stack-pill pill-blue">PostgreSQL</span>
+            <span class="stack-pill pill-teal">Gin</span>
+            <span class="stack-pill pill-amber">Render</span>
+          </div>
+          <div class="proj-links">
+            <a href="https://task-queue-worker-v10u.onrender.com" target="_blank" class="proj-link proj-link--demo">&#x25B6; Ver avance</a>
+            <a href="https://github.com/lenard18/task-queue-worker" target="_blank" class="proj-link proj-link--code">&#x2325; C&oacute;digo</a>
           </div>
         </div>
       </div>
