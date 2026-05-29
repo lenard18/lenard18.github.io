@@ -152,10 +152,16 @@
     .hero-avatar {
       width: 180px; height: 180px; border-radius: 50%;
       background: linear-gradient(135deg, var(--accent-bg), #dbeafe);
-      border: 3px solid var(--border);
+      border: 3px solid var(--accent);
       display: flex; align-items: center; justify-content: center;
       font-size: 5rem; flex-shrink: 0;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 0 0 6px var(--accent-bg), var(--shadow-lg);
+      overflow: hidden;
+    }
+    .hero-avatar img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+      border-radius: 50%;
     }
     .hero-socials {
       display: flex; gap: 0.65rem; margin-top: 1.5rem;
@@ -500,7 +506,9 @@
           </a>
         </div>
       </div>
-      <div class="hero-avatar">👨‍💻</div>
+      <div class="hero-avatar">
+        <img src="img/profile.jpg" alt="Leonardo Gómez" />
+      </div>
     </div>
   </div>
 </section>
