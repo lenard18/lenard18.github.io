@@ -1,0 +1,7 @@
+node_modules/
+*.pdf
+generate-pdf.js
+capture-screenshots.js
+embed-images.js
+package.json
+package-lock.json
